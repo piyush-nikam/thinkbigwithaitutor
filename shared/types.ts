@@ -109,6 +109,8 @@ export interface Lesson {
   attempts: number;
   /** Scene timeline from Agent 3 (schema defined in milestone 6). */
   timeline?: unknown;
+  /** Retest questions curated for this lesson's misconception, generated while the lesson is prepared. */
+  retestQuestions?: Question[];
   error?: string;
   createdAt: string;
   updatedAt: string;

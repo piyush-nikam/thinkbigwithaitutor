@@ -8,8 +8,10 @@
     "dev:server": "tsx watch --env-file-if-exists=.env server/index.ts",
     "dev:web": "vite",
     "build": "vite build",
-    "start": "tsx server/index.ts",
+    "start": "tsx --env-file-if-exists=.env server/index.ts",
     "typecheck": "tsc --noEmit",
+    "bank:generate": "tsx --env-file-if-exists=.env scripts/generateBank.ts",
+    "bank:build": "tsx scripts/buildBank.ts",
     "test": "node --import tsx --test \"shared/**/*.test.ts\" \"server/**/*.test.ts\" \"agents/**/*.test.ts\""
   },
   "dependencies": {

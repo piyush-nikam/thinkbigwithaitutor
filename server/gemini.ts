@@ -1,26 +1,58 @@
 import { GoogleGenAI } from "@google/genai";
 import { z } from "zod";
 
-const DEFAULT_MODELS = [
-  ...(process.env.GEMINI_MODEL ? [process.env.GEMINI_MODEL] : []),
-  "gemini-3.5-flash-lite",
-  "gemini-3.5-flash",
-  "gemini-3.8-flash",
-];
+const isVertexMode = () =>
+  process.env.USE_VERTEX_AI === "true" ||
+  Boolean(process.env.GOOGLE_CLOUD_PROJECT) ||
+  Boolean(process.env.VERTEX_API_KEY);
+
+function getModelList(override?: string): string[] {
+  const base = isVertexMode()
+    ? ["gemini-2.5-flash", "gemini-3.5-flash-lite", "gemini-3.5-flash"]
+    : ["gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-3.8-flash"];
+
+  const list = [
+    ...(override ? [override] : []),
+    ...(process.env.GEMINI_MODEL ? [process.env.GEMINI_MODEL] : []),
+    ...base,
+  ];
+  return [...new Set(list)];
+}
 
 const CALL_TIMEOUT_MS = 25_000;
 
 let client: GoogleGenAI | null = null;
 
 function getClient(): GoogleGenAI {
+  if (client) return client;
+
+  if (isVertexMode()) {
+    const vertexApiKey = process.env.VERTEX_API_KEY?.trim();
+    if (vertexApiKey) {
+      client = new GoogleGenAI({ vertexai: true, apiKey: vertexApiKey });
+      return client;
+    }
+    const project = process.env.GOOGLE_CLOUD_PROJECT?.trim();
+    const location = process.env.GOOGLE_CLOUD_LOCATION?.trim() || "global";
+    client = new GoogleGenAI({ vertexai: true, project, location });
+    return client;
+  }
+
   const apiKey = process.env.GEMINI_API_KEY?.trim();
   if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not set in .env");
+    throw new Error("Set GEMINI_API_KEY or GOOGLE_CLOUD_PROJECT (Vertex AI) in .env");
   }
-  if (!client) {
-    client = new GoogleGenAI({ apiKey });
-  }
+  client = new GoogleGenAI({ apiKey });
   return client;
+}
+
+export function isGeminiConfigured(): boolean {
+  return Boolean(
+    process.env.GEMINI_API_KEY?.trim() ||
+      process.env.VERTEX_API_KEY?.trim() ||
+      process.env.GOOGLE_CLOUD_PROJECT?.trim() ||
+      process.env.USE_VERTEX_AI === "true",
+  );
 }
 
 function isTransientError(err: unknown): boolean {
@@ -55,8 +87,8 @@ export interface GenerateJsonOptions<T extends z.ZodTypeAny> {
 }
 
 /**
- * Calls Gemini with JSON schema enforcement, a per-call timeout, Zod validation,
- * and automatic fallback across Flash models on 503/429/timeout.
+ * Calls Gemini (via Vertex AI when GOOGLE_CLOUD_PROJECT/USE_VERTEX_AI is set,
+ * or AI Studio via GEMINI_API_KEY) with JSON schema enforcement and Zod validation.
  */
 export async function generateJson<T extends z.ZodTypeAny>({
   system,
@@ -68,9 +100,7 @@ export async function generateJson<T extends z.ZodTypeAny>({
 }: GenerateJsonOptions<T>): Promise<z.infer<T>> {
   const ai = getClient();
   const responseJsonSchema = z.toJSONSchema(schema);
-  const modelsToTry = model
-    ? [model, ...DEFAULT_MODELS.filter((m) => m !== model)]
-    : [...new Set(DEFAULT_MODELS)];
+  const modelsToTry = getModelList(model);
   let currentPrompt = prompt;
   let lastError = "Unknown error";
 

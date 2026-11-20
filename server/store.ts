@@ -9,8 +9,9 @@ import type { AgentEvent, Learner, Lesson, Quiz } from "../shared/types";
 
 interface Db {
   learners: Record<string, Learner>;
-  quizzes: Record<string, Quiz>; // cached per topic, shared by all learners
-  retests: Record<string, Quiz>; // keyed by `${learnerId}:${topicId}`
+  quizzes: Record<string, Quiz>; // legacy per-topic cache (only used if the question bank is incomplete)
+  retests: Record<string, Quiz>; // legacy
+  activeQuizzes: Record<string, Quiz>; // the quiz currently served to a learner, keyed by `${learnerId}:${topicId}`
   lessons: Record<string, Lesson>;
   events: AgentEvent[];
 }
@@ -26,11 +27,12 @@ function load(): Db {
       learners: parsed.learners ?? {},
       quizzes: parsed.quizzes ?? {},
       retests: parsed.retests ?? {},
+      activeQuizzes: parsed.activeQuizzes ?? {},
       lessons: parsed.lessons ?? {},
       events: parsed.events ?? [],
     };
   }
-  return { learners: {}, quizzes: {}, retests: {}, lessons: {}, events: [] };
+  return { learners: {}, quizzes: {}, retests: {}, activeQuizzes: {}, lessons: {}, events: [] };
 }
 
 const db: Db = load();
@@ -81,6 +83,14 @@ export const getRetestQuiz = (learnerId: string, topicId: string): Quiz | undefi
 
 export function saveRetestQuiz(learnerId: string, topicId: string, quiz: Quiz) {
   db.retests[`${learnerId}:${topicId}`] = quiz;
+  save();
+}
+
+export const getActiveQuiz = (learnerId: string, topicId: string): Quiz | undefined =>
+  db.activeQuizzes[`${learnerId}:${topicId}`];
+
+export function saveActiveQuiz(learnerId: string, topicId: string, quiz: Quiz) {
+  db.activeQuizzes[`${learnerId}:${topicId}`] = quiz;
   save();
 }
 

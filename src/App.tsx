@@ -85,7 +85,7 @@ export function App() {
     setQuizLoading(true);
     setQuizError(null);
     try {
-      const res = await fetch(`/api/topics/${topicId}/quiz`);
+      const res = await fetch(`/api/learners/${learnerId}/topics/${topicId}/quiz`);
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Failed to generate quiz");
       setQuiz(data);
@@ -163,6 +163,7 @@ export function App() {
   const activeLesson = screen.view === "remedial" ? lessons.find((l) => l.id === screen.lessonId) : null;
   const bodmasNotPassed = learner?.topics.bodmas?.status !== "passed";
   const hasReadyRemedial = lessons.some((l) => l.status === "ready");
+  const jobsInProgress = lessons.some((l) => l.status === "pending" || l.status === "generating");
 
   const remedialCues = useMemo(
     () => (activeLesson?.timeline ? timelineToCues(activeLesson.timeline as SceneTimeline) : []),
@@ -242,8 +243,16 @@ export function App() {
                 </div>
                 {bodmasNotPassed && hasReadyRemedial && (
                   <div className="stage-footer">
-                    <span className="muted small">Finished watching your personalized lesson(s)?</span>
-                    <button className="primary-btn" onClick={() => startRetest("bodmas")}>
+                    <span className="muted small">
+                      {jobsInProgress
+                        ? "Your other lesson(s) are still being prepared. The retest unlocks when all are ready."
+                        : "Finished watching your personalized lesson(s)?"}
+                    </span>
+                    <button
+                      className="primary-btn"
+                      disabled={jobsInProgress}
+                      onClick={() => startRetest("bodmas")}
+                    >
                       Take Retest →
                     </button>
                   </div>
@@ -351,7 +360,7 @@ export function App() {
 
             {screen.step === "quiz" && (
               quizLoading ? (
-                <div className="card">Generating fresh retest questions for your misconceptions...</div>
+                <div className="card">Loading your personalised retest...</div>
               ) : quizError ? (
                 <div className="card">
                   <p>Retest error: {quizError}</p>
@@ -455,8 +464,16 @@ export function App() {
             </div>
             {bodmasNotPassed && (
               <div className="stage-footer">
-                <span className="muted small">Ready to prove you've got this?</span>
-                <button className="primary-btn" onClick={() => startRetest(activeLesson.topicId)}>
+                <span className="muted small">
+                  {jobsInProgress
+                    ? "Your other lesson(s) are still being prepared. The retest unlocks when all are ready."
+                    : "Ready to prove you've got this?"}
+                </span>
+                <button
+                  className="primary-btn"
+                  disabled={jobsInProgress}
+                  onClick={() => startRetest(activeLesson.topicId)}
+                >
                   Take Retest →
                 </button>
               </div>

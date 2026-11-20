@@ -1,0 +1,1994 @@
+{
+  "topicId": "bodmas",
+  "questions": [
+    {
+      "id": "which_first_01",
+      "kind": "which_first",
+      "prompt": "In 10 − 3 + 2, which operation should be done first?",
+      "expression": "10 − 3 + 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Subtraction (10 − 3): + and − are equals, so they go left to right",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Addition (3 + 2): adding is more important than subtracting",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_sub",
+            "description": "Treats addition as higher priority than subtraction"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Addition (3 + 2): A comes before S in BODMAS",
+          "correct": false,
+          "misconception": {
+            "tag": "bodmas_as_strict_sequence",
+            "description": "Believes each letter of BODMAS is its own step, so A always comes before S"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Both together, because they have equal priority",
+          "correct": false,
+          "misconception": {
+            "tag": "equal_priority_means_simultaneous",
+            "description": "Thinks operations with equal priority are done at the same time instead of left to right"
+          }
+        }
+      ],
+      "hint": "Addition and subtraction share one step. What do you do when operations tie?",
+      "explanation": "+ and − share a step, so work left to right: 10 − 3 = 7, then 7 + 2 = 9."
+    },
+    {
+      "id": "which_first_02",
+      "kind": "which_first",
+      "prompt": "In 24 ÷ 4 × 2, which operation should be done first?",
+      "expression": "24 ÷ 4 × 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Division (24 ÷ 4): ÷ and × are equals, so they go left to right",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Multiplication (4 × 2): × is stronger than ÷",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Multiplication (4 × 2): start from the right-hand end",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Both together, because they have equal priority",
+          "correct": false,
+          "misconception": {
+            "tag": "equal_priority_means_simultaneous",
+            "description": "Thinks operations with equal priority are done at the same time instead of left to right"
+          }
+        }
+      ],
+      "hint": "Division and multiplication share one step. Which one is on the left?",
+      "explanation": "÷ and × tie, so go left to right: 24 ÷ 4 = 6, then 6 × 2 = 12."
+    },
+    {
+      "id": "which_first_03",
+      "kind": "which_first",
+      "prompt": "In 5 + 3 × 2, which operation should be done first?",
+      "expression": "5 + 3 × 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multiplication (3 × 2): × outranks +",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Addition (5 + 3): we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Addition (5 + 3): additions are done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Either one: the answer is the same",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Which operation sits on the higher step of the staircase?",
+      "explanation": "× is on a higher step than +, so 3 × 2 = 6 first, then 5 + 6 = 11."
+    },
+    {
+      "id": "which_first_04",
+      "kind": "which_first",
+      "prompt": "In 12 − 2 × 3, which operation should be done first?",
+      "expression": "12 − 2 × 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multiplication (2 × 3): × outranks −",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Subtraction (12 − 2): left to right",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Either one: the answer is the same",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Subtraction (12 − 2): it starts with the biggest number",
+          "correct": false,
+          "misconception": {
+            "tag": "operation_order_by_size",
+            "description": "Chooses what to do first by the size of the numbers instead of the rules"
+          }
+        }
+      ],
+      "hint": "Compare the steps for × and −. Which is higher?",
+      "explanation": "× outranks −: 2 × 3 = 6, then 12 − 6 = 6."
+    },
+    {
+      "id": "which_first_05",
+      "kind": "which_first",
+      "prompt": "In 8 + (6 − 2) × 3, which operation should be done first?",
+      "expression": "8 + (6 − 2) × 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Subtraction (6 − 2): brackets come first",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Addition (8 + 6): we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Multiplication (2 × 3): the brackets can be ignored",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Addition (8 + 6): additions are done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Brackets are the top step of the staircase.",
+      "explanation": "Brackets first: 6 − 2 = 4, then 4 × 3 = 12, then 8 + 12 = 20."
+    },
+    {
+      "id": "which_first_06",
+      "kind": "which_first",
+      "prompt": "In 3 + 4², which operation should be done first?",
+      "expression": "3 + 4²",
+      "options": [
+        {
+          "id": "a",
+          "text": "Squaring (4²): orders come before addition",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Addition (3 + 4): we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Multiplication (4 × 2): 4² means 4 × 2",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Addition (3 + 4): additions are done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Orders (powers) sit above addition on the staircase.",
+      "explanation": "Orders first: 4² = 16, then 3 + 16 = 19."
+    },
+    {
+      "id": "which_first_07",
+      "kind": "which_first",
+      "prompt": "In 2 × 3², which operation should be done first?",
+      "expression": "2 × 3²",
+      "options": [
+        {
+          "id": "a",
+          "text": "Squaring (3²): orders come before multiplication",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Multiplication (2 × 3): × comes before the power",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Multiplication (2 × 3): we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Multiplication (3 × 2): 3² means 3 × 2",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        }
+      ],
+      "hint": "The power belongs only to the 3. Which step is higher, orders or ×?",
+      "explanation": "Orders first: 3² = 9, then 2 × 9 = 18."
+    },
+    {
+      "id": "which_first_08",
+      "kind": "which_first",
+      "prompt": "In 20 − 5 − 3, which operation should be done first?",
+      "expression": "20 − 5 − 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "20 − 5: a chain of subtractions goes left to right",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "5 − 3: work from the right-hand end",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Both together, since they are the same operation",
+          "correct": false,
+          "misconception": {
+            "tag": "equal_priority_means_simultaneous",
+            "description": "Thinks operations with equal priority are done at the same time instead of left to right"
+          }
+        },
+        {
+          "id": "d",
+          "text": "5 − 3: start with the smaller numbers",
+          "correct": false,
+          "misconception": {
+            "tag": "operation_order_by_size",
+            "description": "Chooses what to do first by the size of the numbers instead of the rules"
+          }
+        }
+      ],
+      "hint": "Same operation twice in a row. Which direction do ties go?",
+      "explanation": "Left to right: 20 − 5 = 15, then 15 − 3 = 12."
+    },
+    {
+      "id": "which_first_09",
+      "kind": "which_first",
+      "prompt": "In 48 ÷ 6 ÷ 2, which operation should be done first?",
+      "expression": "48 ÷ 6 ÷ 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "48 ÷ 6: a chain of divisions goes left to right",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "6 ÷ 2: work from the right-hand end",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Both together, since they are the same operation",
+          "correct": false,
+          "misconception": {
+            "tag": "equal_priority_means_simultaneous",
+            "description": "Thinks operations with equal priority are done at the same time instead of left to right"
+          }
+        },
+        {
+          "id": "d",
+          "text": "6 ÷ 2: start with the smaller numbers",
+          "correct": false,
+          "misconception": {
+            "tag": "operation_order_by_size",
+            "description": "Chooses what to do first by the size of the numbers instead of the rules"
+          }
+        }
+      ],
+      "hint": "Same operation twice in a row. Which direction do ties go?",
+      "explanation": "Left to right: 48 ÷ 6 = 8, then 8 ÷ 2 = 4."
+    },
+    {
+      "id": "which_first_10",
+      "kind": "which_first",
+      "prompt": "In 7 + 8 ÷ 4, which operation should be done first?",
+      "expression": "7 + 8 ÷ 4",
+      "options": [
+        {
+          "id": "a",
+          "text": "Division (8 ÷ 4): ÷ outranks +",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Addition (7 + 8): we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Addition (7 + 8): additions are done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Either one: the answer is the same",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Which sits on the higher step: ÷ or +?",
+      "explanation": "÷ outranks +: 8 ÷ 4 = 2, then 7 + 2 = 9."
+    },
+    {
+      "id": "which_first_11",
+      "kind": "which_first",
+      "prompt": "In (9 − 4) × 2 + 1, which operation should be done first?",
+      "expression": "(9 − 4) × 2 + 1",
+      "options": [
+        {
+          "id": "a",
+          "text": "Subtraction (9 − 4): brackets come first",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Multiplication (4 × 2): × outranks − and the brackets can be ignored",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Addition (2 + 1): additions are done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Multiplication of the whole bracket by 2: × outranks everything",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_not_first",
+            "description": "Does not realise brackets must be worked out before everything else"
+          }
+        }
+      ],
+      "hint": "Look for the brackets. They are always worked out first.",
+      "explanation": "Brackets first: 9 − 4 = 5, then 5 × 2 = 10, then 10 + 1 = 11."
+    },
+    {
+      "id": "which_first_12",
+      "kind": "which_first",
+      "prompt": "In 2 + 6 ÷ 3 × 2, which operation should be done first?",
+      "expression": "2 + 6 ÷ 3 × 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "Division (6 ÷ 3): ÷ and × tie and go left to right, and both outrank +",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Multiplication (3 × 2): × is stronger than ÷",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Addition (2 + 6): we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Addition (2 + 6): additions are done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "First decide which step is higher, then settle the tie left to right.",
+      "explanation": "6 ÷ 3 = 2, then 2 × 2 = 4, then 2 + 4 = 6."
+    },
+    {
+      "id": "next_step_01",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 8 + (6 − 2) × 3?",
+      "expression": "8 + (6 − 2) × 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "6 − 2 = 4",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "8 + 6 = 14",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "2 × 3 = 6",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "d",
+          "text": "8 + 6 − 2 = 12",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Find the bracket. It is the top step.",
+      "explanation": "Brackets first: 6 − 2 = 4, then 4 × 3 = 12, then 8 + 12 = 20."
+    },
+    {
+      "id": "next_step_02",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 5 + 2 × 3²?",
+      "expression": "5 + 2 × 3²",
+      "options": [
+        {
+          "id": "a",
+          "text": "3² = 9",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "5 + 2 = 7",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "2 × 3 = 6, then square the result",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Read 3² as 3 × 2 = 6",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        }
+      ],
+      "hint": "Orders (powers) come before × and +.",
+      "explanation": "3² = 9, then 2 × 9 = 18, then 5 + 18 = 23."
+    },
+    {
+      "id": "next_step_03",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 30 − 4 × (2 + 3)?",
+      "expression": "30 − 4 × (2 + 3)",
+      "options": [
+        {
+          "id": "a",
+          "text": "2 + 3 = 5",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "30 − 4 = 26",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "4 × 2 = 8",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Multiply 4 by the bracket first, then work inside it",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_not_first",
+            "description": "Does not realise brackets must be worked out before everything else"
+          }
+        }
+      ],
+      "hint": "Work out the inside of the bracket before anything touches it.",
+      "explanation": "2 + 3 = 5, then 4 × 5 = 20, then 30 − 20 = 10."
+    },
+    {
+      "id": "next_step_04",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 18 ÷ 3 × 2 − 4?",
+      "expression": "18 ÷ 3 × 2 − 4",
+      "options": [
+        {
+          "id": "a",
+          "text": "18 ÷ 3 = 6",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "3 × 2 = 6",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "c",
+          "text": "2 − 4 = −2",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "÷ and × tie, and ties go left to right. Both outrank −.",
+      "explanation": "18 ÷ 3 = 6, then 6 × 2 = 12, then 12 − 4 = 8."
+    },
+    {
+      "id": "next_step_05",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 7 + 3 × 4 − 2?",
+      "expression": "7 + 3 × 4 − 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "3 × 4 = 12",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "7 + 3 = 10",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "4 − 2 = 2",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Multiplication is on a higher step than + and −.",
+      "explanation": "3 × 4 = 12, then 7 + 12 = 19, then 19 − 2 = 17."
+    },
+    {
+      "id": "next_step_06",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving (2 + 3)² − 4?",
+      "expression": "(2 + 3)² − 4",
+      "options": [
+        {
+          "id": "a",
+          "text": "2 + 3 = 5",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "3² = 9",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "2 + 3 − 4 = 1",
+          "correct": false,
+          "misconception": {
+            "tag": "bracket_swallows_rest",
+            "description": "Believes a bracket extends to the end of the expression"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "The bracket holds only 2 + 3, and it comes first.",
+      "explanation": "2 + 3 = 5, then 5² = 25, then 25 − 4 = 21."
+    },
+    {
+      "id": "next_step_07",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 40 ÷ (2 + 3) × 2?",
+      "expression": "40 ÷ (2 + 3) × 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "2 + 3 = 5",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "40 ÷ 2 = 20",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "3 × 2 = 6",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Brackets sit above ÷ and ×.",
+      "explanation": "2 + 3 = 5, then 40 ÷ 5 = 8, then 8 × 2 = 16."
+    },
+    {
+      "id": "next_step_08",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 6 + 4 ÷ 2?",
+      "expression": "6 + 4 ÷ 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "4 ÷ 2 = 2",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "6 + 4 = 10, because we always start at the left",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "6 + 4 = 10, because additions go first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Which is on the higher step, ÷ or +?",
+      "explanation": "4 ÷ 2 = 2, then 6 + 2 = 8."
+    },
+    {
+      "id": "next_step_09",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 2 × (3 + 4) − 5?",
+      "expression": "2 × (3 + 4) − 5",
+      "options": [
+        {
+          "id": "a",
+          "text": "3 + 4 = 7",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "2 × 3 = 6",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "4 − 5 = −1",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Spot the brackets and start inside them.",
+      "explanation": "3 + 4 = 7, then 2 × 7 = 14, then 14 − 5 = 9."
+    },
+    {
+      "id": "next_step_10",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 9 − 3 × 2²?",
+      "expression": "9 − 3 × 2²",
+      "options": [
+        {
+          "id": "a",
+          "text": "2² = 4",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "9 − 3 = 6",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "3 × 2 = 6, then square it",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Orders are above × and −.",
+      "explanation": "2² = 4, then 3 × 4 = 12, then 9 − 12 = −3."
+    },
+    {
+      "id": "next_step_11",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving 15 + 5 × 2 − 3?",
+      "expression": "15 + 5 × 2 − 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "5 × 2 = 10",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "15 + 5 = 20",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "2 − 3 = −1",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "× is on a higher step than + and −.",
+      "explanation": "5 × 2 = 10, then 15 + 10 = 25, then 25 − 3 = 22."
+    },
+    {
+      "id": "next_step_12",
+      "kind": "next_step",
+      "prompt": "What is the exact first step when solving (12 − 4) ÷ 2 + 3?",
+      "expression": "(12 − 4) ÷ 2 + 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "12 − 4 = 8",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "4 ÷ 2 = 2",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "2 + 3 = 5",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Any step first: the order does not matter",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Brackets are the top step.",
+      "explanation": "12 − 4 = 8, then 8 ÷ 2 = 4, then 4 + 3 = 7."
+    },
+    {
+      "id": "spot_mistake_01",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 10 − 3 + 2 and got 5. Her working: 3 + 2 = 5, then 10 − 5 = 5. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She added before subtracting. + and − are equals, so 10 − 3 comes first, giving 9",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: addition is higher priority than subtraction, so 5 is right",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_sub",
+            "description": "Treats addition as higher priority than subtraction"
+          }
+        },
+        {
+          "id": "c",
+          "text": "She should have worked from the right, so 5 is right",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: either order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Check which operation Riya did first, and which direction ties go.",
+      "explanation": "Left to right: 10 − 3 = 7, then 7 + 2 = 9."
+    },
+    {
+      "id": "spot_mistake_02",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 24 ÷ 4 × 2 and got 3. Her working: 4 × 2 = 8, then 24 ÷ 8 = 3. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She multiplied before dividing. ÷ and × are equals, so 24 ÷ 4 comes first, giving 12",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: multiplication is higher priority than division, so 3 is right",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: either order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        },
+        {
+          "id": "d",
+          "text": "She should have done 24 ÷ 4 and 4 × 2 at the same time",
+          "correct": false,
+          "misconception": {
+            "tag": "equal_priority_means_simultaneous",
+            "description": "Thinks operations with equal priority are done at the same time instead of left to right"
+          }
+        }
+      ],
+      "hint": "Look at which of ÷ and × is on the left.",
+      "explanation": "Left to right: 24 ÷ 4 = 6, then 6 × 2 = 12."
+    },
+    {
+      "id": "spot_mistake_03",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 5 + 3 × 2 and got 16. Her working: 5 + 3 = 8, then 8 × 2 = 16. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She added before multiplying. × outranks +, so 3 × 2 comes first, giving 11",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: always work left to right, so 16 is right",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: additions are always done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: any order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Compare the steps of × and + on the staircase.",
+      "explanation": "× first: 3 × 2 = 6, then 5 + 6 = 11."
+    },
+    {
+      "id": "spot_mistake_04",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved (2 + 3) × 4 and got 14. Her working: 3 × 4 = 12, then 2 + 12 = 14. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She ignored the brackets. 2 + 3 must be worked out first, giving 5 × 4 = 20",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: brackets only group numbers and can be skipped",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: × outranks +, even with brackets",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_not_first",
+            "description": "Does not realise brackets must be worked out before everything else"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: any order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "What is the top step of the staircase?",
+      "explanation": "Brackets first: 2 + 3 = 5, then 5 × 4 = 20."
+    },
+    {
+      "id": "spot_mistake_05",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 2 × 3² and got 36. Her working: 2 × 3 = 6, then 6² = 36. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She multiplied before squaring. 3² = 9 comes first, giving 2 × 9 = 18",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: multiplication comes before powers",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "c",
+          "text": "She should have read 3² as 3 × 2 = 6, giving 12",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: always work left to right",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        }
+      ],
+      "hint": "The little 2 belongs only to the 3.",
+      "explanation": "Orders first: 3² = 9, then 2 × 9 = 18."
+    },
+    {
+      "id": "spot_mistake_06",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 4 + 3² and got 49. Her working: 4 + 3 = 7, then 7² = 49. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She added before squaring. 3² = 9 comes first, so 4 + 9 = 13",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: always work left to right",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: additions are always done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "She should have read 3² as 3 × 2 = 6, giving 10",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        }
+      ],
+      "hint": "Which belongs higher on the staircase, orders or addition?",
+      "explanation": "Orders first: 3² = 9, then 4 + 9 = 13."
+    },
+    {
+      "id": "spot_mistake_07",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 20 − 5 − 3 and got 18. Her working: 5 − 3 = 2, then 20 − 2 = 18. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She worked right to left. Subtractions go left to right: 20 − 5 = 15, then 15 − 3 = 12",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: a chain is worked from the right",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: the order does not matter for subtraction",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: she correctly started with the smaller numbers",
+          "correct": false,
+          "misconception": {
+            "tag": "operation_order_by_size",
+            "description": "Chooses what to do first by the size of the numbers instead of the rules"
+          }
+        }
+      ],
+      "hint": "Try both orders. Do they give the same answer?",
+      "explanation": "Left to right: 20 − 5 = 15, then 15 − 3 = 12."
+    },
+    {
+      "id": "spot_mistake_08",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 48 ÷ 6 ÷ 2 and got 16. Her working: 6 ÷ 2 = 3, then 48 ÷ 3 = 16. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She worked right to left. Divisions go left to right: 48 ÷ 6 = 8, then 8 ÷ 2 = 4",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: a chain is worked from the right",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: any order works for division",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: she correctly started with the smaller numbers",
+          "correct": false,
+          "misconception": {
+            "tag": "operation_order_by_size",
+            "description": "Chooses what to do first by the size of the numbers instead of the rules"
+          }
+        }
+      ],
+      "hint": "Ties are settled by reading left to right.",
+      "explanation": "Left to right: 48 ÷ 6 = 8, then 8 ÷ 2 = 4."
+    },
+    {
+      "id": "spot_mistake_09",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 7 + 8 ÷ 4 and got 3.75. Her working: 7 + 8 = 15, then 15 ÷ 4 = 3.75. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She added before dividing. ÷ outranks +, so 8 ÷ 4 = 2 comes first, giving 9",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: always work left to right",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: additions are always done first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: any order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Which has more power on the staircase, ÷ or +?",
+      "explanation": "÷ first: 8 ÷ 4 = 2, then 7 + 2 = 9."
+    },
+    {
+      "id": "spot_mistake_10",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved (9 − 4) × 2 + 1 and got 2. Her working: 4 × 2 = 8, then 9 − 8 + 1 = 2. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She ignored the brackets. 9 − 4 = 5 comes first, giving 5 × 2 + 1 = 11",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: brackets can be skipped",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: × outranks −, even with brackets",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_not_first",
+            "description": "Does not realise brackets must be worked out before everything else"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: any order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "What did Riya do to the bracket?",
+      "explanation": "Brackets first: 9 − 4 = 5, then 5 × 2 = 10, then 10 + 1 = 11."
+    },
+    {
+      "id": "spot_mistake_11",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 2 + 6 ÷ 3 × 2 and got 3. Her working: 3 × 2 = 6, then 6 ÷ 6 = 1, then 2 + 1 = 3. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She did × before ÷. They tie, so 6 ÷ 3 = 2, then 2 × 2 = 4, then 2 + 4 = 6",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: × outranks ÷",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "c",
+          "text": "She should have done 2 + 6 first, since additions come first",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: any order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Check the order in which she handled ÷ and ×.",
+      "explanation": "Left to right on the tie: 6 ÷ 3 = 2, then 2 × 2 = 4, then 2 + 4 = 6."
+    },
+    {
+      "id": "spot_mistake_12",
+      "kind": "spot_mistake",
+      "prompt": "Riya solved 12 − 2 × 3 and got 30. Her working: 12 − 2 = 10, then 10 × 3 = 30. What went wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She subtracted before multiplying. × outranks −, so 2 × 3 = 6 comes first, giving 6",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Nothing is wrong: always work left to right",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "Nothing is wrong: she correctly started with the bigger numbers",
+          "correct": false,
+          "misconception": {
+            "tag": "operation_order_by_size",
+            "description": "Chooses what to do first by the size of the numbers instead of the rules"
+          }
+        },
+        {
+          "id": "d",
+          "text": "Nothing is wrong: any order gives the same answer",
+          "correct": false,
+          "misconception": {
+            "tag": "operations_any_order",
+            "description": "Believes operations can be done in any order without changing the answer"
+          }
+        }
+      ],
+      "hint": "Compare the steps of × and −.",
+      "explanation": "× first: 2 × 3 = 6, then 12 − 6 = 6."
+    },
+    {
+      "id": "numeric_01",
+      "kind": "numeric",
+      "prompt": "Calculate: 10 − 4 + 2 × 3",
+      "expression": "10 − 4 + 2 × 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "12",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "24",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "0",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_sub",
+            "description": "Treats addition as higher priority than subtraction"
+          }
+        },
+        {
+          "id": "d",
+          "text": "-8",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Do the multiplication first, then + and − from left to right.",
+      "explanation": "2 × 3 = 6, then 10 − 4 = 6, then 6 + 6 = 12."
+    },
+    {
+      "id": "numeric_02",
+      "kind": "numeric",
+      "prompt": "Calculate: 40 ÷ 5 × 2 + 4",
+      "expression": "40 ÷ 5 × 2 + 4",
+      "options": [
+        {
+          "id": "a",
+          "text": "20",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "8",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "c",
+          "text": "48",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "÷ and × tie, so go left to right. Add last.",
+      "explanation": "40 ÷ 5 = 8, then 8 × 2 = 16, then 16 + 4 = 20."
+    },
+    {
+      "id": "numeric_03",
+      "kind": "numeric",
+      "prompt": "Calculate: 5 × (2 + 3) − 4",
+      "expression": "5 × (2 + 3) − 4",
+      "options": [
+        {
+          "id": "a",
+          "text": "21",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "9",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "5",
+          "correct": false,
+          "misconception": {
+            "tag": "bracket_swallows_rest",
+            "description": "Believes a bracket extends to the end of the expression"
+          }
+        }
+      ],
+      "hint": "Start inside the bracket, and stop where the bracket stops.",
+      "explanation": "2 + 3 = 5, then 5 × 5 = 25, then 25 − 4 = 21."
+    },
+    {
+      "id": "numeric_04",
+      "kind": "numeric",
+      "prompt": "Calculate: 2 + 3² × 2",
+      "expression": "2 + 3² × 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "20",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "38",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "c",
+          "text": "50",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "d",
+          "text": "14",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        }
+      ],
+      "hint": "Square first, then multiply, then add.",
+      "explanation": "3² = 9, then 9 × 2 = 18, then 2 + 18 = 20."
+    },
+    {
+      "id": "numeric_05",
+      "kind": "numeric",
+      "prompt": "Calculate: 60 − 20 − 10 + 5",
+      "expression": "60 − 20 − 10 + 5",
+      "options": [
+        {
+          "id": "a",
+          "text": "35",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "25",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_sub",
+            "description": "Treats addition as higher priority than subtraction"
+          }
+        },
+        {
+          "id": "c",
+          "text": "55",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        }
+      ],
+      "hint": "Only + and − here. Which direction do ties go?",
+      "explanation": "Left to right: 60 − 20 = 40, then 40 − 10 = 30, then 30 + 5 = 35."
+    },
+    {
+      "id": "numeric_06",
+      "kind": "numeric",
+      "prompt": "Calculate: 48 ÷ 6 ÷ 2 + 1",
+      "expression": "48 ÷ 6 ÷ 2 + 1",
+      "options": [
+        {
+          "id": "a",
+          "text": "5",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "17",
+          "correct": false,
+          "misconception": {
+            "tag": "right_to_left_chain",
+            "description": "Works a chain of subtractions or divisions from right to left"
+          }
+        },
+        {
+          "id": "c",
+          "text": "12",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Divide left to right, then add.",
+      "explanation": "48 ÷ 6 = 8, then 8 ÷ 2 = 4, then 4 + 1 = 5."
+    },
+    {
+      "id": "numeric_07",
+      "kind": "numeric",
+      "prompt": "Calculate: 6 + 18 ÷ 3 × 2",
+      "expression": "6 + 18 ÷ 3 × 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "18",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "16",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "9",
+          "correct": false,
+          "misconception": {
+            "tag": "mul_before_div",
+            "description": "Treats multiplication as higher priority than division"
+          }
+        },
+        {
+          "id": "d",
+          "text": "4",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "÷ and × first (left to right), then add.",
+      "explanation": "18 ÷ 3 = 6, then 6 × 2 = 12, then 6 + 12 = 18."
+    },
+    {
+      "id": "numeric_08",
+      "kind": "numeric",
+      "prompt": "Calculate: (9 − 4) × 2 + 1",
+      "expression": "(9 − 4) × 2 + 1",
+      "options": [
+        {
+          "id": "a",
+          "text": "11",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "2",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        },
+        {
+          "id": "c",
+          "text": "15",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Brackets first, then multiply, then add.",
+      "explanation": "9 − 4 = 5, then 5 × 2 = 10, then 10 + 1 = 11."
+    },
+    {
+      "id": "numeric_09",
+      "kind": "numeric",
+      "prompt": "Calculate: 30 − 4 × (2 + 3)",
+      "expression": "30 − 4 × (2 + 3)",
+      "options": [
+        {
+          "id": "a",
+          "text": "10",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "130",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "25",
+          "correct": false,
+          "misconception": {
+            "tag": "brackets_ignored",
+            "description": "Ignores brackets and evaluates as if they were not there"
+          }
+        }
+      ],
+      "hint": "Bracket, then multiply, then subtract.",
+      "explanation": "2 + 3 = 5, then 4 × 5 = 20, then 30 − 20 = 10."
+    },
+    {
+      "id": "numeric_10",
+      "kind": "numeric",
+      "prompt": "Calculate: 2 × 3²",
+      "expression": "2 × 3²",
+      "options": [
+        {
+          "id": "a",
+          "text": "18",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "36",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "c",
+          "text": "12",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        }
+      ],
+      "hint": "The power belongs to the 3 only.",
+      "explanation": "3² = 9, then 2 × 9 = 18."
+    },
+    {
+      "id": "numeric_11",
+      "kind": "numeric",
+      "prompt": "Calculate: 100 ÷ 5² + 3",
+      "expression": "100 ÷ 5² + 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "7",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "403",
+          "correct": false,
+          "misconception": {
+            "tag": "orders_after_multiplication",
+            "description": "Does × or ÷ before applying the power (order)"
+          }
+        },
+        {
+          "id": "c",
+          "text": "43",
+          "correct": false,
+          "misconception": {
+            "tag": "power_as_multiplication",
+            "description": "Reads a power such as 3² as 3 × 2"
+          }
+        }
+      ],
+      "hint": "Square the 5 first, then divide, then add.",
+      "explanation": "5² = 25, then 100 ÷ 25 = 4, then 4 + 3 = 7."
+    },
+    {
+      "id": "numeric_12",
+      "kind": "numeric",
+      "prompt": "Calculate: 12 + 2 × (10 − 4) ÷ 3",
+      "expression": "12 + 2 × (10 − 4) ÷ 3",
+      "options": [
+        {
+          "id": "a",
+          "text": "16",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "28",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "8",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Bracket first, then × and ÷ left to right, then add.",
+      "explanation": "10 − 4 = 6, then 2 × 6 = 12, then 12 ÷ 3 = 4, then 12 + 4 = 16."
+    },
+    {
+      "id": "numeric_13",
+      "kind": "numeric",
+      "prompt": "Calculate: 18 − 3 × 4 + 6 ÷ 2",
+      "expression": "18 − 3 × 4 + 6 ÷ 2",
+      "options": [
+        {
+          "id": "a",
+          "text": "9",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "33",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "3",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_everything",
+            "description": "Does all additions first, whatever the other operations are"
+          }
+        }
+      ],
+      "hint": "Do 3 × 4 and 6 ÷ 2 first, then work left to right.",
+      "explanation": "3 × 4 = 12 and 6 ÷ 2 = 3, then 18 − 12 = 6, then 6 + 3 = 9."
+    },
+    {
+      "id": "numeric_14",
+      "kind": "numeric",
+      "prompt": "Calculate: 6 × 3 − 8 ÷ 2 + 5",
+      "expression": "6 × 3 − 8 ÷ 2 + 5",
+      "options": [
+        {
+          "id": "a",
+          "text": "19",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "10",
+          "correct": false,
+          "misconception": {
+            "tag": "left_to_right_ignore_precedence",
+            "description": "Works strictly left to right, ignoring that × and ÷ outrank + and −"
+          }
+        },
+        {
+          "id": "c",
+          "text": "9",
+          "correct": false,
+          "misconception": {
+            "tag": "add_before_sub",
+            "description": "Treats addition as higher priority than subtraction"
+          }
+        }
+      ],
+      "hint": "× and ÷ first, then + and − from left to right.",
+      "explanation": "6 × 3 = 18 and 8 ÷ 2 = 4, then 18 − 4 = 14, then 14 + 5 = 19."
+    }
+  ]
+}

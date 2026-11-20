@@ -25,7 +25,7 @@ export async function draftQuiz({
   const focusBlock = isRetest
     ? `This is a RETEST targeting ONLY these missed misconceptions:\n${misconceptionsFocus!
         .map((m) => `- ${m.tag}: ${m.description}`)
-        .join("\n")}\nCreate 1 fresh question per misconception (mix of text-based and numeric, with at least 1 numeric if possible). Use brand-new expressions not seen before.`
+        .join("\n")}\nCreate exactly 2 fresh questions per misconception: one text-based question (kind "which_first", "next_step" or "spot_mistake") and one "numeric" question. Every question must lead a learner with that misconception to a specific wrong option, and use brand-new expressions not seen before.`
     : `Create 4 questions for "${topicTitle}":
 - Question 1 (kind: "which_first"): text-based, asking which operation is evaluated first (e.g. testing equal precedence left-to-right for + and - or × and ÷).
 - Question 2 (kind: "next_step"): text-based, asking what the exact first step is in a multi-operation expression with brackets or orders.
