@@ -8,7 +8,7 @@ const isVertexMode = () =>
 
 function getModelList(override?: string): string[] {
   const base = isVertexMode()
-    ? ["gemini-2.5-flash", "gemini-3.5-flash-lite", "gemini-3.5-flash"]
+    ? ["gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-3.8-flash", "gemini-2.5-flash"]
     : ["gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-3.8-flash"];
 
   const list = [
@@ -62,6 +62,8 @@ function isTransientError(err: unknown): boolean {
     msg.includes("UNAVAILABLE") ||
     msg.includes("429") ||
     msg.includes("RESOURCE_EXHAUSTED") ||
+    msg.includes("404") ||
+    msg.includes("NOT_FOUND") ||
     msg.includes("TIMEOUT")
   );
 }
