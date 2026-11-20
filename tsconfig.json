@@ -13,5 +13,5 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["node"]
   },
-  "include": ["src", "remotion", "server", "shared", "vite.config.ts"]
+  "include": ["src", "remotion", "server", "shared", "agents", "vite.config.ts"]
 }

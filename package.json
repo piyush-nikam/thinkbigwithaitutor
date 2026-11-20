@@ -9,7 +9,8 @@
     "dev:web": "vite",
     "build": "vite build",
     "start": "tsx server/index.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"shared/**/*.test.ts\" \"server/**/*.test.ts\" \"agents/**/*.test.ts\""
   },
   "dependencies": {
     "@google/genai": "^3.6.1",
